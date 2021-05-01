@@ -81,7 +81,7 @@ function digit_to_string(digit) {
 }
 
 /**
- * This function convert an positive integer into its phonetic equivalent.
+ * This function converts an positive integer into its phonetic equivalent.
  * @method integer_to_string
  * @param  {number}          integer positive integer
  * @throw                            Will throw an error for non-matching input
