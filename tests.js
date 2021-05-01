@@ -18,6 +18,10 @@ function expect_throw(f, args, error_message) {
 // Tests for is_integer
 expect_equal(lib.is_integer(1), true, "is_integer: 1 -> true failed")
 expect_equal(lib.is_integer(1000), true, "is_integer: 1000 -> true failed")
+expect_equal(lib.is_integer(-98756432100000000000000000), true,
+							"is_integer: -987564321 -> true failed")
+expect_equal(lib.is_integer(987564321000000000000000000), true,
+							"is_integer: -987564321 -> true failed")
 // Due to the limitation of javascript
 expect_equal(lib.is_integer(1.000000000000000001), true,
 							"is_integer: 1.000000000000000001-> true failed")
