@@ -81,8 +81,6 @@ expect_equal(lib.integer_to_string(98), "NineEight",
 expect_equal(lib.integer_to_string(9876543210),
 							"NineEightSevenSixFiveFourThreeTwoOneZero",
 							"integer_to_string: 9876543210 -> \"NineEightSevenSixFiveFourThreeTwoOneZero\" failed");
-console.log(lib.integer_to_string(9876543210))
-
 
 // Bad path for integer_to_string
 expect_throw(lib.integer_to_string, -11,
