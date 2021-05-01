@@ -1,4 +1,45 @@
 /**
+ * This function determines if the input is an integer.
+ * @method is_integer
+ * @param  {number}   value A javascript value
+ * @return {Boolean}        Returns true if it is an integer, else false
+ *
+ * Example:
+ * is_integer(1) -> true
+ * is_integer(1000) -> true
+ * is_integer(1.00000000000000001) -> true // limitation of javascript
+ * is_integer(1.1) -> false
+ * is_integer(-2313.3) -> false
+ * is_integer("1") -> false
+ * is_integer(NaN) -> false
+ */
+function is_integer(value) {
+	return "Not Implemented"
+}
+
+/**
+ * This function determines if the input is a digit.
+ * @method is_digit
+ * @param  {number}  value A javascript number that is not a special number
+ * @throw                  Will throw an error if the input is not a number
+ * @return {Boolean}       Returns true if it is only a digit, else false
+ *
+ * Example:
+ * is_digit(1) -> true
+ * is_digit(1.000000000000000000001) -> true // limitation of javascript
+ * is_digit(123) -> false
+ * is_digit("1") -> false
+ */
+function is_digit(value) {
+	if (is_integer(value) && value >= 0 && value < 10) {
+		return "Not Implemented";
+	}
+
+	return "Not Implemented";
+}
+
+
+/**
  * This function converts an integer digit into its phonetic equivalent.
  * @method digit_to_string
  * @param  {number}        digit [0-9]
@@ -11,9 +52,12 @@
  * digit_to_string(11) -> throwing error
  * digit_to_string("11") -> throwing error
  */
-
 function digit_to_string(digit) {
-	return "Not Implemented"
+	if (is_digit(digit)) {
+		return "Not Implemented"
+	} else {
+		throw "digit_to_string: Input must be an integer between 0 and 9."
+	}
 }
 
 /**
@@ -30,7 +74,7 @@ function digit_to_string(digit) {
  * integer_to_string("11") -> throwing error
  */
 function integer_to_string(integer) {
-	return "Not Implemented"
+	return "Not Implemented";
 }
 
-module.exports = { digit_to_string, integer_to_string };
+module.exports = { is_integer, is_digit, digit_to_string, integer_to_string };
