@@ -15,10 +15,10 @@
  */
 function is_integer(value) {
 	if (typeof(value) === "number") {
-		return value % 1 === 0
+		return value % 1 === 0;
 	}
 
-	return false
+	return false;
 }
 
 /**
