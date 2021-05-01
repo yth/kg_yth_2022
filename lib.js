@@ -35,11 +35,7 @@ function is_integer(value) {
  * is_digit("1") -> false
  */
 function is_digit(value) {
-	if (is_integer(value) && value >= 0 && value < 10) {
-		return "Not Implemented";
-	}
-
-	return "Not Implemented";
+	return is_integer(value) && value >= 0 && value < 10;
 }
 
 
