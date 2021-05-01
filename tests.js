@@ -76,9 +76,20 @@ expect_equal(lib.integer_to_string(0), "Zero",
 							"integer_to_string: 0 -> Zero failed");
 expect_equal(lib.integer_to_string(11), "OneOne",
 							"integer_to_string: 11 -> \"OneOne\" failed");
+expect_equal(lib.integer_to_string(98), "NineEight",
+							"integer_to_string: 98 -> \"NineEight\" failed");
+expect_equal(lib.integer_to_string(9876543210),
+							"NineEightSevenSixFiveFourThreeTwoOneZero",
+							"integer_to_string: 9876543210 -> \"NineEightSevenSixFiveFourThreeTwoOneZero\" failed");
+console.log(lib.integer_to_string(9876543210))
+
 
 // Bad path for integer_to_string
 expect_throw(lib.integer_to_string, -11,
 							"integer_to_string: -11 -> throw error failed");
 expect_throw(lib.integer_to_string, "11",
 							"integer_to_string: \"11\" -> throw error failed");
+expect_throw(lib.integer_to_string, NaN,
+							"integer_to_string: NaN -> throw error failed");
+expect_throw(lib.integer_to_string, 3.14,
+							"integer_to_string: NaN -> throw error failed");
