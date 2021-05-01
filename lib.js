@@ -96,13 +96,15 @@ function digit_to_string(digit) {
 function integer_to_string(integer) {
 	if (is_integer(integer)) {
 		if (integer >= 0) {
-			if (integer > 9) {
-				var digit = integer % 10;
-				var rest = (integer - digit) / 10
-				return integer_to_string(rest) + digit_to_string(digit)
+			var digit = integer % 10;
+			var rest = (integer - digit) / 10;
+
+			if (rest === 0) {
+				return digit_to_string(digit);
 			} else {
-				return digit_to_string(integer);
+				return integer_to_string(rest) + digit_to_string(digit);
 			}
+
 		} else {
 			throw "integer_to_string: Input must be a positive integer.";
 		}
