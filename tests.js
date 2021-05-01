@@ -15,6 +15,7 @@ function expect_throw(f, args, error_message) {
 	}
 }
 
+
 // Tests for is_integer
 expect_equal(lib.is_integer(1), true, "is_integer: 1 -> true failed");
 expect_equal(lib.is_integer(1000), true, "is_integer: 1000 -> true failed");
@@ -31,6 +32,7 @@ expect_equal(lib.is_integer(-2313.3), false,
 expect_equal(lib.is_integer("1"), false, "is_integer: \"1\" -> false failed");
 expect_equal(lib.is_integer(NaN), false, "is_integer: NaN -> false failed");
 
+
 // Tests for is_digit
 expect_equal(lib.is_digit(1), true, "is_digit: 1 -> true failed");
 // Due to the limitation of javascript
@@ -38,6 +40,7 @@ expect_equal(lib.is_digit(1.000000000000000000001), true,
 						"is_digit: 1.000000000000000000001 -> true failed");
 expect_equal(lib.is_digit(123), false, "is_digit: 123 -> false failed");
 expect_equal(lib.is_digit("1"), false, "is_digit: \"1\" -> false failed");
+
 
 // Tests for digit_to_string
 // Good path for digit_to_string
@@ -65,3 +68,17 @@ expect_equal(lib.digit_to_string(9), "Nine",
 // Bad path for digit_to_string
 expect_throw(lib.digit_to_string, 11,
 								"digit_to_string: 11 -> throw error failed");
+
+
+// Tests for integer_to_string
+// Good path for integer_to_string
+expect_equal(lib.integer_to_string(0), "Zero",
+							"integer_to_string: 0 -> Zero failed");
+expect_equal(lib.integer_to_string(11), "OneOne",
+							"integer_to_string: 11 -> \"OneOne\" failed");
+
+// Bad path for integer_to_string
+expect_throw(lib.integer_to_string, -11,
+							"integer_to_string: -11 -> throw error failed");
+expect_throw(lib.integer_to_string, "11",
+							"integer_to_string: \"11\" -> throw error failed");
