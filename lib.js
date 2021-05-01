@@ -97,8 +97,8 @@ function integer_to_string(integer) {
 	if (is_integer(integer)) {
 		if (integer >= 0) {
 			if (integer > 9) {
-				digit = integer % 10;
-				rest = (integer - digit) / 10
+				var digit = integer % 10;
+				var rest = (integer - digit) / 10
 				return integer_to_string(rest) + digit_to_string(digit)
 			} else {
 				return digit_to_string(integer);
