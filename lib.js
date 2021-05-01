@@ -7,14 +7,18 @@
  * Example:
  * is_integer(1) -> true
  * is_integer(1000) -> true
- * is_integer(1.00000000000000001) -> true // limitation of javascript
+ * is_integer(1.000000000000000001) -> true // limitation of javascript
  * is_integer(1.1) -> false
  * is_integer(-2313.3) -> false
  * is_integer("1") -> false
  * is_integer(NaN) -> false
  */
 function is_integer(value) {
-	return "Not Implemented"
+	if (typeof(value) === "number") {
+		return value % 1 === 0
+	}
+
+	return false
 }
 
 /**
