@@ -1,3 +1,6 @@
+unittest:
+	node tests.js
+
 functional_test:
 	@echo "  result:" $(shell node main.js 3 25 209)
 	@echo "expected:" Three,TwoFive,TwoZeroNine
