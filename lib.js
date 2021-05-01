@@ -54,9 +54,29 @@ function is_digit(value) {
  */
 function digit_to_string(digit) {
 	if (is_digit(digit)) {
-		return "Not Implemented"
+		if (digit === 1) {
+			return "One";
+		} else if (digit === 2) {
+			return "Two";
+		} else if (digit === 3) {
+			return "Three";
+		} else if (digit === 4) {
+			return "Four";
+		} else if (digit === 5) {
+			return "Five";
+		} else if (digit === 6) {
+			return "Six";
+		} else if (digit === 7) {
+			return "Seven";
+		} else if (digit === 8) {
+			return "Eight";
+		} else if (digit === 9) {
+			return "Nine";
+		} else {
+			return "Zero";
+		}
 	} else {
-		throw "digit_to_string: Input must be an integer between 0 and 9."
+		throw "digit_to_string: Input must be an integer between 0 and 9.";
 	}
 }
 
