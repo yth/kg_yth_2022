@@ -94,7 +94,21 @@ function digit_to_string(digit) {
  * integer_to_string("11") -> throwing error
  */
 function integer_to_string(integer) {
-	return "Not Implemented";
+	if (is_integer(integer)) {
+		if (integer >= 0) {
+			if (integer > 9) {
+				digit = integer % 10;
+				rest = (integer - digit) / 10
+				return integer_to_string(rest) + digit_to_string(digit)
+			} else {
+				return digit_to_string(integer);
+			}
+		} else {
+			throw "integer_to_string: Input must be a positive integer.";
+		}
+	} else {
+		throw "integer_to_string: Input must be a integer.";
+	}
 }
 
 module.exports = { is_integer, is_digit, digit_to_string, integer_to_string };
