@@ -1,3 +1,6 @@
+LOOKUP_TABLE = ["Zero", "One", "Two", "Three", "Four",
+				"Five", "Six", "Seven", "Eight", "Nine"]
+
 /**
  * This function determines if the input is an integer.
  * @method is_integer
@@ -54,27 +57,7 @@ function is_digit(value) {
  */
 function digit_to_string(digit) {
 	if (is_digit(digit)) {
-		if (digit === 1) {
-			return "One";
-		} else if (digit === 2) {
-			return "Two";
-		} else if (digit === 3) {
-			return "Three";
-		} else if (digit === 4) {
-			return "Four";
-		} else if (digit === 5) {
-			return "Five";
-		} else if (digit === 6) {
-			return "Six";
-		} else if (digit === 7) {
-			return "Seven";
-		} else if (digit === 8) {
-			return "Eight";
-		} else if (digit === 9) {
-			return "Nine";
-		} else {
-			return "Zero";
-		}
+		return LOOKUP_TABLE[digit]
 	} else {
 		throw "digit_to_string: Input must be an integer between 0 and 9.";
 	}
