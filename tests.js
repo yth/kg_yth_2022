@@ -91,3 +91,27 @@ expect_throw(lib.integer_to_string, NaN,
 							"integer_to_string: NaN -> throw error failed");
 expect_throw(lib.integer_to_string, 3.14,
 							"integer_to_string: NaN -> throw error failed");
+
+
+// Tests for list_of_integers_to_string
+// Good path for list_of_integers_to_string
+expect_equal(lib.list_of_integers_to_string([]), "",
+	"list_of_integers_to_string: [] -> \"\" failed")
+expect_equal(lib.list_of_integers_to_string([1]), "One",
+	"list_of_integers_to_string: [1] -> \"One\" failed")
+expect_equal(lib.list_of_integers_to_string([1, 2]), "One,Two",
+	"list_of_integers_to_string: [1, 2] -> \"One,Two\" failed")
+expect_equal(lib.list_of_integers_to_string([34, 5, 6]), "ThreeFour,Five,Six",
+	"list_of_integers_to_string: [34, 5, 6] -> \"ThreeFour,Five,Six\" failed")
+
+// Bad paht for list_of_integers_to_string
+expect_throw(lib.list_of_integers_to_string, 1,
+	"list_of_integers_to_string: 1 -> throw error failed")
+expect_throw(lib.list_of_integers_to_string, [-1],
+	"list_of_integers_to_string: [-1] -> throw error failed")
+expect_throw(lib.list_of_integers_to_string, ["1"],
+	"list_of_integers_to_string: [\"1\"]-> throw error failed")
+expect_throw(lib.list_of_integers_to_string, [3.14],
+	"list_of_integers_to_string: [3.14] -> throw error failed")
+expect_throw(lib.list_of_integers_to_string, [1, 2, 3, "4"],
+	"list_of_integers_to_string: [1, 2, 3, \"4\"] -> throw error failed")
