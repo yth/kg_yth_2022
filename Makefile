@@ -1,15 +1,10 @@
 unittest:
 	node tests.js
 
-functional_test:
+functional_test1:
 	@echo "  result:" $(shell node main.js 3 25 209)
 	@echo "expected:" Three,TwoFive,TwoZeroNine
 
-test0:
-	@echo "  result:" $(shell node main.js 0)
-	@echo "expected:" Zero
-
-test1:
-	@echo "  result:" $(shell node main.js 1)
-	@echo "expected:" One
-
+functional_test2:
+	@echo "  result:" $(shell node main.js 10 300 5)
+	@echo "expected:" OneZero,ThreeZeroZero,Five
