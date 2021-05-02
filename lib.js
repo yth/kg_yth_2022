@@ -4,13 +4,13 @@ LOOKUP_TABLE = ["Zero", "One", "Two", "Three", "Four",
 /**
  * This function determines if the input is an integer.
  * @method is_integer
- * @param  {number}   value A javascript value
+ * @param  {number}   value A JavaScript value
  * @return {Boolean}        Returns true if it is an integer, else false
  *
  * Example:
  * is_integer(1) -> true
  * is_integer(1000) -> true
- * is_integer(1.000000000000000001) -> true // limitation of javascript
+ * is_integer(1.000000000000000001) -> true // limitation of JavaScript
  * is_integer(1.1) -> false
  * is_integer(-2313.3) -> false
  * is_integer("1") -> false
@@ -27,13 +27,12 @@ function is_integer(value) {
 /**
  * This function determines if the input is a digit.
  * @method is_digit
- * @param  {number}  value A javascript number that is not a special number
- * @throw                  Will throw an error if the input is not a number
- * @return {Boolean}       Returns true if it is only a digit, else false
+ * @param  {number}  value A JavaScript value
+ * @return {Boolean}       Returns true only if it is only a positive digit
  *
  * Example:
  * is_digit(1) -> true
- * is_digit(1.000000000000000000001) -> true // limitation of javascript
+ * is_digit(1.000000000000000000001) -> true // limitation of JavaScript
  * is_digit(123) -> false
  * is_digit("1") -> false
  */
@@ -66,7 +65,7 @@ function digit_to_string(digit) {
 /**
  * This function converts an positive integer into its phonetic equivalent.
  * @method integer_to_string
- * @param  {number}          integer positive integer
+ * @param  {number}          integer A positive integer
  * @throw                            Will throw an error for non-matching input
  * @return {string}                  Phonetic equivalent of the integer
  *
