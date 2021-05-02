@@ -12,7 +12,7 @@ Given an array: [10, 300, 5], print “OneZero,ThreeZeroZero,Five” into stdout
 ## Assumptions
 Based on the given example, I assume the list of integers only contain positive integers. I also assume that we will only be dealing with proper list of integers, which can be defined as the following:
 
-List-of-Integer::= [\\({INTEGER}^{*(,)}\\)]
+List-of-Integer::= [ { INTEGER }^{ * (,) } ]
 
 ### Examples that matches the definition
 []
