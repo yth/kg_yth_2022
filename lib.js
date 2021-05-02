@@ -113,4 +113,49 @@ function integer_to_string(integer) {
 	}
 }
 
-module.exports = { is_integer, is_digit, digit_to_string, integer_to_string };
+/**
+ * This function converts a list of integers into its phonetic equivalent.
+ * @method list_of_integer_to_string
+ * @param  {list}  list_of_integer A list of positive integers
+ * @throw          Will throw error if list contain non-positive integer values
+ * @return {string}  Phonetic equivalent of the list of integers
+ *               The list of phonetic equivalent strings are separated by comma
+ *
+ * Example:
+ * list_of_integers_to_string([]) -> ""
+ * list_of_integers_to_string([1]) -> "One"
+ * list_of_integers_to_string([1, 2]) -> "One,Two"
+ * list_of_integers_to_string([34, 5, 6]) -> "ThreeFour,Five,Six"
+ * list_of_integers_to_string(1) -> throw error
+ * list_of_integers_to_string([-1]) -> throwing error
+ * list_of_integers_to_string(["1"]) -> throwing error
+ * list_of_integers_to_string([3.14]) -> throwing error
+ * list_of_integers_to_string([1, 2, 3, "4"]) -> throwing error
+ */
+function list_of_integers_to_string(list_of_integers) {
+	if (list_of_integers.constructor === Array) {
+		var res = "";
+		for (element of list_of_integers) {
+			if (is_integer(element) && element >= 0) {
+				if (res === "") {
+					res += integer_to_string(element);
+				} else {
+					res += ",";
+					res += integer_to_string(element);
+				}
+			} else {
+				throw "list_of_integers_to_string: Input must be a list of positive integers.";
+			}
+		}
+
+		return res;
+	} else {
+		throw "list_of_integers_to_string: Input must be a list of integers.";
+	}
+}
+
+module.exports = { is_integer,
+				   is_digit,
+				   digit_to_string,
+				   integer_to_string,
+				   list_of_integers_to_string };
