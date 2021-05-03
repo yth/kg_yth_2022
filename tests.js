@@ -115,3 +115,7 @@ expect_throw(lib.list_of_integers_to_string, [3.14],
 	"list_of_integers_to_string: [3.14] -> throw error failed")
 expect_throw(lib.list_of_integers_to_string, [1, 2, 3, "4"],
 	"list_of_integers_to_string: [1, 2, 3, \"4\"] -> throw error failed")
+
+
+// If all tests are passed, only this line will be displayed
+console.log("Silence is golden.")
